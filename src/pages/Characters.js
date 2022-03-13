@@ -1,12 +1,5 @@
-import React, {
-  Fragment,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import React, { Fragment, useCallback, useContext, useEffect } from "react";
 
-import CharacterRow from "../components/CharacterRow";
 import { Context } from "../context/Context";
 import { Loader } from "../components/Loader";
 import { Pagination } from "../components/Pagination";
