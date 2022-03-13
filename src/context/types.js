@@ -1,0 +1,10 @@
+export const SET_DATA = "SET_DATA";
+export const SHOW_LOADER = "SHOW_LOADER";
+export const HIDE_LOADER = "HIDE_LOADER";
+export const SET_PAGE_SIZE = "SET_PAGE_SIZE";
+export const SET_TOTAL_PAGES = "SET_TOTAL_PAGES";
+export const FIRST_PAGE = "FIRST_PAGE";
+export const PREV_PAGE = "PREV_PAGE";
+export const NEXT_PAGE = "NEXT_PAGE";
+export const LAST_PAGE = "LAST_PAGE";
+export const SET_GENDER = "SET_GENDER";
