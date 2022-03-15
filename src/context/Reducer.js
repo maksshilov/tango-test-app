@@ -1,4 +1,5 @@
 import {
+  CULTURE_FILTER,
   FIRST_PAGE,
   HIDE_LOADER,
   LAST_PAGE,
@@ -22,6 +23,7 @@ const handlers = {
   [NEXT_PAGE]: (state, { page }) => ({ ...state, page }),
   [LAST_PAGE]: (state, { page }) => ({ ...state, page }),
   [SET_GENDER]: (state, { gender }) => ({ ...state, gender }),
+  [CULTURE_FILTER]: (state, { culture }) => ({ ...state, culture }),
   DEFAULT: (state) => state,
 };
 

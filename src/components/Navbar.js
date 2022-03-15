@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { DropdownPageSize } from "../components/DropdownPageSize";
+import { CultureFilter } from "./CultureFilter";
 import { DropdownGenderFilter } from "./DropdownGenderFilter";
 
 export const Navbar = () => {
@@ -18,6 +19,7 @@ export const Navbar = () => {
       </Link>
       {location.pathname === "/" && <DropdownPageSize />}
       {location.pathname === "/" && <DropdownGenderFilter />}
+      {location.pathname === "/" && <CultureFilter />}
       {location.pathname !== "/" && (
         <button
           type="button"

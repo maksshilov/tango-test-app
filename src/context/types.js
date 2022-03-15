@@ -8,3 +8,4 @@ export const PREV_PAGE = "PREV_PAGE";
 export const NEXT_PAGE = "NEXT_PAGE";
 export const LAST_PAGE = "LAST_PAGE";
 export const SET_GENDER = "SET_GENDER";
+export const CULTURE_FILTER = "CULTURE_FILTER";

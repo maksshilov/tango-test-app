@@ -1,24 +1,49 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../context/Context";
 import CharacterRow from "./CharacterRow";
 
 export const CharacterData = () => {
   const { state } = useContext(Context);
+  const [filteredData, setFilteredData] = useState();
 
-  if (state.data) {
-    let charData;
-
-    if (state.gender === "Any") {
-      charData = state.data.map((char, i) => (
-        <CharacterRow key={i} charData={char} />
-      ));
-    } else {
-      charData = state.data.filter((char) => char.gender === state.gender);
-      charData = charData.map((char, i) => (
-        <CharacterRow key={i} charData={char} />
-      ));
+  useEffect(() => {
+    if (state.data) {
+      setFilteredData(state.data);
     }
-    return charData;
+  }, [state.data]);
+
+  useEffect(() => {
+    let filteredDataByGender = {};
+    let filteredDataByCulture = {};
+
+    if (state.data) {
+      if (state.gender === "Any") {
+        filteredDataByCulture = state.data.filter((char) =>
+          char.culture
+            .toLowerCase()
+            .includes(state.culture.trim().toLowerCase())
+        );
+        setFilteredData(() => filteredDataByCulture);
+      } else {
+        filteredDataByCulture = state.data.filter((char) =>
+          char.culture
+            .toLowerCase()
+            .includes(state.culture.trim().toLowerCase())
+        );
+
+        filteredDataByGender = filteredDataByCulture.filter(
+          (char) => char.gender === state.gender
+        );
+
+        setFilteredData(() => filteredDataByGender);
+      }
+    }
+  }, [state.gender, state.culture]);
+
+  if (filteredData) {
+    return filteredData.map((char, i) => (
+      <CharacterRow key={i} charData={char} />
+    ));
   } else {
     return null;
   }

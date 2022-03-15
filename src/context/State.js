@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import { Context } from "./Context";
 import { Reducer } from "./Reducer";
 import {
+  CULTURE_FILTER,
   FIRST_PAGE,
   HIDE_LOADER,
   LAST_PAGE,
@@ -20,6 +21,7 @@ export const State = ({ children }) => {
     page: 1,
     pageSize: 25,
     gender: "Any",
+    culture: "",
   });
 
   const setData = (data) => {
@@ -31,28 +33,10 @@ export const State = ({ children }) => {
 
   const showLoader = () => dispatch({ type: SHOW_LOADER });
   const hideLoader = () => dispatch({ type: HIDE_LOADER });
-
-  const setPageSize = (pageSize) => {
-    dispatch({
-      type: SET_PAGE_SIZE,
-      pageSize,
-    });
-  };
-
-  const setTotalPages = (totalPages) => {
-    dispatch({
-      type: SET_TOTAL_PAGES,
-      totalPages,
-    });
-  };
-
-  const firstPage = () => {
-    dispatch({
-      type: FIRST_PAGE,
-      page: 1,
-    });
-  };
-
+  const setPageSize = (pageSize) => dispatch({ type: SET_PAGE_SIZE, pageSize });
+  const setTotalPages = (totalPages) =>
+    dispatch({ type: SET_TOTAL_PAGES, totalPages });
+  const firstPage = () => dispatch({ type: FIRST_PAGE, page: 1 });
   const prevPage = () => {
     let { page } = state;
     page = page === 1 ? page : --page;
@@ -62,7 +46,6 @@ export const State = ({ children }) => {
       page,
     });
   };
-
   const nextPage = () => {
     let { page, totalPages } = state;
     page = page === totalPages ? page : ++page;
@@ -72,22 +55,10 @@ export const State = ({ children }) => {
       page,
     });
   };
-
-  const lastPage = () => {
-    let { totalPages } = state;
-
-    dispatch({
-      type: LAST_PAGE,
-      page: totalPages,
-    });
-  };
-
-  const setGender = (gender) => {
-    dispatch({
-      type: SET_GENDER,
-      gender,
-    });
-  };
+  const lastPage = () => dispatch({ type: LAST_PAGE, page: state.totalPages });
+  const setGender = (gender) => dispatch({ type: SET_GENDER, gender });
+  const cultureFilter = (culture) =>
+    dispatch({ type: CULTURE_FILTER, culture });
 
   return (
     <Context.Provider
@@ -102,6 +73,7 @@ export const State = ({ children }) => {
         setPageSize,
         setTotalPages,
         setGender,
+        cultureFilter,
         state,
       }}
     >
