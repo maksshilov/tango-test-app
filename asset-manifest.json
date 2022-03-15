@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/tango-test-app/static/css/main.13ad77b7.css",
-    "main.js": "/tango-test-app/static/js/main.d4c5a8e8.js",
+    "main.js": "/tango-test-app/static/js/main.381ea6ca.js",
     "static/js/787.984a52d4.chunk.js": "/tango-test-app/static/js/787.984a52d4.chunk.js",
     "index.html": "/tango-test-app/index.html",
     "main.13ad77b7.css.map": "/tango-test-app/static/css/main.13ad77b7.css.map",
-    "main.d4c5a8e8.js.map": "/tango-test-app/static/js/main.d4c5a8e8.js.map",
+    "main.381ea6ca.js.map": "/tango-test-app/static/js/main.381ea6ca.js.map",
     "787.984a52d4.chunk.js.map": "/tango-test-app/static/js/787.984a52d4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.13ad77b7.css",
-    "static/js/main.d4c5a8e8.js"
+    "static/js/main.381ea6ca.js"
   ]
 }
