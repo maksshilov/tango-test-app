@@ -25,7 +25,7 @@ export default function CharacterRow({ charData }) {
         let houseId = url.split("/").pop();
         return (
           <div key={i}>
-            <Link to={`/allegiances/${houseId}`} state={{ url }}>
+            <Link to={`/tango-test-app/allegiances/${houseId}`} state={{ url }}>
               {houseId}
             </Link>
           </div>

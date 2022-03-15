@@ -17,10 +17,10 @@ export const Navbar = () => {
       <Link to={"/"} className="navbar-brand" style={{ marginLeft: "20px" }}>
         Ice & Fire Library
       </Link>
-      {location.pathname === "/" && <DropdownPageSize />}
-      {location.pathname === "/" && <DropdownGenderFilter />}
-      {location.pathname === "/" && <CultureFilter />}
-      {location.pathname !== "/" && (
+      {location.pathname === "/tango-test-app/" && <DropdownPageSize />}
+      {location.pathname === "/tango-test-app/" && <DropdownGenderFilter />}
+      {location.pathname === "/tango-test-app/" && <CultureFilter />}
+      {location.pathname !== "/tango-test-app/" && (
         <button
           type="button"
           className="btn btn-info"
