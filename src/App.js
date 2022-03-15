@@ -18,7 +18,7 @@ function App() {
               <Route path=":houseId" element={<Allegiances />} />
             </Route>
             <Route
-              path="tango-test-app/*"
+              path="/tango-test-app/*"
               element={<h1>Oops... there is nothing here!</h1>}
             />
           </Routes>
